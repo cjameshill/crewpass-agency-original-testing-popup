@@ -94,7 +94,7 @@ const sendMessage = () => {
           />
         </div>
       </div>
-      <pre class="bg-gray-100 p-4 rounded-3xl whitespace-pre-wrap">
+      <pre class="bg-gray-100 p-2 rounded-3xl whitespace-pre-wrap">
       <code class="text-gray-800 text-xs">
         {{message}}
       </code>
@@ -106,7 +106,7 @@ const sendMessage = () => {
       />
       <button
         @click="sendMessage"
-        class="p-4 rounded-3xl border-2 border-gray-200 bg-gray-100"
+        class="p-4 rounded-3xl border-2 border-gray-200 hover:bg-gray-300 bg-gray-100"
       >
         Send
       </button>
