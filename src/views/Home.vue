@@ -78,11 +78,26 @@ const sendMessage = () => {
       <div class="flex">Patner: {{ partner }}</div>
       <div class="flex">Origin: {{ origin }}</div>
     </div>
-    <div class="flex w-full flex-col space-y-4 mt-16">
+    <div class="flex w-full flex-col space-y-8 mt-16">
       <h1 class="text-xl font-medium text-gray-700">
         Post Message back to origin
       </h1>
-      <div class="flex flex-col space-y-2 w-full">
+      <div class="flex flex-col space-y-2 w-full mb-8">
+        <div class="pl-8 pr-8 py-4 my-8 border-gray-100 border-t-2 border-b-2">
+          <h1 class="ml-4 text-sm text-gray-400 py-1">Status Matching</h1>
+
+          <pre class="bg-gray-100 p-0 rounded-3xl whitespace-pre-wrap">
+          <code class="text-gray-800 text-xs">
+            not-checked: "Approve With CrewPass"
+            pending: "Pending"
+            approved: "Approved"
+            verified: "Approved"
+            declined: "Declined"
+            unchecked: "Unchecked"
+          </code>
+        </pre>
+        </div>
+
         <div class="flex flex-col" v-for="item in inputItems">
           <label class="text-xs text-gray-400 ml-2 py-1" for="item">{{
             item
@@ -93,6 +108,13 @@ const sendMessage = () => {
             class="p-2 rounded-2xl border-2 border-gray-100 w-full"
           />
         </div>
+
+        <button
+          @click="sendMessage"
+          class="p-4 rounded-3xl border-2 border-gray-200 hover:bg-lime-700 bg-lime-600"
+        >
+          Send back to origin
+        </button>
       </div>
       <pre class="bg-gray-100 p-2 rounded-3xl whitespace-pre-wrap">
       <code class="text-gray-800 text-xs">
@@ -104,12 +126,6 @@ const sendMessage = () => {
         rows="6"
         class="p-4 rounded-3xl border-2 border-gray-200 w-full"
       />
-      <button
-        @click="sendMessage"
-        class="p-4 rounded-3xl border-2 border-gray-200 hover:bg-gray-300 bg-gray-100"
-      >
-        Send
-      </button>
     </div>
   </div>
 </template>
